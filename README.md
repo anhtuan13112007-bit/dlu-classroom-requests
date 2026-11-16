@@ -2,13 +2,14 @@
 
 Website học tập và luyện tập chuyên sâu phần ngữ pháp **Câu yêu cầu (Making Requests in the English Classroom)** dành cho sinh viên ngành **Sư phạm Tiếng Anh — Trường Đại học Đà Lạt (Dalat University)**.
 
-## ✨ Điểm mới ở Phiên bản v2
+## ✨ Điểm mới ở Phiên bản v2.1
 
 - **Giao diện Obsidian Bento 12 Chế độ (`#07080c` & gradient cam-vàng)**: Bố cục tối giản, sắc nét, chia 4x3 thẻ chế độ kèm phím tắt toàn cục (`Space`, `1–4`, `Enter`).
-- **Tích hợp AI Tutor qua API Key miễn phí (`Multi-Provider Free AI`)**:
-  - Hỗ trợ **Google Gemini (`gemini-2.5-flash`)**, **Groq (`llama-3.3-70b-versatile`)**, **Mistral AI (`mistral-small-latest`)**, **DeepSeek (`deepseek-chat`)** và **OpenRouter (`:free`)**.
-  - Cho phép **AI chấm bài viết câu theo 3 tiêu chí sư phạm**, **tạo mẹo nhớ Phrasal Verbs**, **sinh 5 câu trắc nghiệm mới từ Hộp Quên**, **phân tích chuyên sâu từng cụm từ**, và **đóng vai Học sinh AI phản hồi câu yêu cầu**.
-  - Khóa API lưu an toàn trên trình duyệt của người dùng (`localStorage`).
+- **Gõ từ trực tiếp trong Flashcard & Che từ luyện chính tả**: Có ô gõ từ ngay dưới thẻ lật 3D (`EN ⇄ VN`), chế độ che từ tiếng Anh giữ lại chữ đầu + IPA để luyện gõ nhớ sâu, chấm chính tả từng ký tự và phát âm Oxford UK.
+- **Nút "🎲 Từ ngẫu nhiên" & Trộn thứ tự ngẫu nhiên (Fisher-Yates)**: Có mặt ở thanh điều khiển chung và trong từng chế độ luyện tập giúp đảo thứ tự ghi nhớ lâu hơn.
+- **Tích hợp AI Tutor thông minh (Không lo lỗi Model & Chạy cả khi không có Key)**:
+  - **AI Sư Phạm Nội Bộ (0đ, Không cần API Key)**: Chấm bài 3 tiêu chí, tạo mẹo nhớ, sinh câu hỏi từ Hộp Quên và đóng vai học sinh hoạt động ngay lập tức.
+  - **Multi-Provider Free API Key**: Hỗ trợ **Google Gemini (`gemini-3.8-flash` + tự dò model từ Key)**, **Groq (`llama-3.3-70b-versatile`)**, **Mistral AI (`mistral-small-latest`)**, **DeepSeek (`deepseek-chat`)** và **OpenRouter (`:free`)**. Tự động nhận diện nhà cung cấp qua tiền tố Key (`AIza...`, `gsk_...`, `sk-or-...`) và tự động đổi sang model khả dụng mới nhất nếu model cũ ngừng hỗ trợ.
 
 ## 🎮 12 Chế độ luyện tập cùng một bộ từ & câu yêu cầu
 

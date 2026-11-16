@@ -1028,6 +1028,73 @@ code,
   font-size: 0.84rem;
 }
 
+/* Flashcard Typing Practice & Random Shuffle Controls */
+.flashcard-typing-box {
+  max-width: 640px;
+  margin: 0 auto 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+}
+
+.flashcard-typing-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.masked-term-pill {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--accent-cyan);
+  background: rgba(34, 211, 238, 0.1);
+  border: 1px dashed rgba(34, 211, 238, 0.35);
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  margin-bottom: 8px;
+}
+
+.char-diff-ok {
+  color: var(--accent-emerald);
+  font-weight: 800;
+}
+
+.char-diff-miss {
+  color: var(--accent-coral);
+  text-decoration: underline;
+  font-weight: 800;
+}
+
+.btn-random {
+  background: rgba(34, 211, 238, 0.14);
+  color: #22d3ee;
+  border: 1px solid rgba(34, 211, 238, 0.35);
+}
+
+[data-theme="light"] .btn-random {
+  color: #0e7490;
+  background: #cffafe;
+}
+
+.btn-random:hover {
+  background: rgba(34, 211, 238, 0.24);
+  transform: translateY(-1px);
+}
+
+.shuffle-active {
+  background: rgba(16, 185, 129, 0.16) !important;
+  color: #34d399 !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+}
+
+[data-theme="light"] .shuffle-active {
+  color: #047857 !important;
+}
+
 @media (max-width: 1024px) {
   .modes-grid { grid-template-columns: repeat(2, 1fr); }
   .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }

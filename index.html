@@ -105,9 +105,9 @@
           <span class="mode-cat cat-memory">GHI NHỚ</span>
           <strong class="mode-card-title">Flashcard</strong>
           <ul class="mode-card-list">
-            <li>Lật thẻ 2 chiều EN ⇄ VN</li>
-            <li>Hộp Leitner: Thuộc / Quên</li>
-            <li>Phát âm giọng Anh-Anh</li>
+            <li>Lật thẻ 2 chiều &amp; gõ từ luyện chính tả</li>
+            <li>Che từ tiếng Anh • Hộp Leitner: Thuộc / Quên</li>
+            <li>Phát âm Anh-Anh &amp; Từ ngẫu nhiên</li>
           </ul>
         </button>
 
@@ -230,6 +230,15 @@
             <h2 id="ws-title" style="font-size: 1.25rem; font-weight: 800;">Flashcard</h2>
           </div>
           <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;" id="ws-right-hud">
+            <button id="global-shuffle-toggle" class="btn btn-sm btn-secondary shuffle-active" title="Bật/Tắt học theo thứ tự xáo trộn ngẫu nhiên">
+              🔀 Thứ tự ngẫu nhiên: BẬT
+            </button>
+            <button id="global-reshuffle-btn" class="btn btn-sm btn-secondary" title="Xáo trộn lại thứ tự bộ từ">
+              ♻️ Trộn lại
+            </button>
+            <button id="global-random-btn" class="btn btn-sm btn-random" title="Nhảy ngay tới một từ / câu ngẫu nhiên">
+              🎲 Từ ngẫu nhiên
+            </button>
             <span style="font-size: 0.78rem; color: var(--text-muted);" id="ws-shortcut-note">
               Space: Lật thẻ • 🔊 Nghe phát âm
             </span>
@@ -280,13 +289,14 @@
       </div>
 
       <p style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 16px;">
-        Chọn nhà cung cấp AI miễn phí (<strong>Gemini 2.5, Groq, Mistral, DeepSeek, OpenRouter</strong>).
-        Khóa API chỉ lưu an toàn trong trình duyệt của riêng bạn.
+        Hỗ trợ <strong>AI Sư Phạm Nội Bộ (Không cần Key)</strong> hoặc kết nối API Key miễn phí
+        (<strong>Gemini 3.8, Groq, Mistral, DeepSeek, OpenRouter</strong>) với cơ chế tự động dò model khả dụng.
       </p>
 
       <div class="form-group">
-        <label for="ai-provider">1. Nhà cung cấp AI (Ưu tiên Free Tier)</label>
+        <label for="ai-provider">1. Nhà cung cấp AI (Ưu tiên Free &amp; Không cần Key)</label>
         <select id="ai-provider" class="answer-input">
+          <option value="builtin">⚡ AI Sư Phạm Nội Bộ (Miễn phí 100%, Không cần API Key)</option>
           <option value="gemini">Google Gemini (Free tại aistudio.google.com)</option>
           <option value="groq">Groq Cloud (Free siêu tốc tại console.groq.com)</option>
           <option value="mistral">Mistral AI (Free tại console.mistral.ai)</option>
@@ -295,21 +305,27 @@
         </select>
       </div>
 
-      <div class="form-group">
-        <label for="ai-model">2. Model mặc định (Có thể sửa tên model nếu cần)</label>
-        <input type="text" id="ai-model" class="answer-input mono" style="font-size: 0.86rem;" />
-        <div id="ai-provider-hint" style="font-size: 0.76rem; color: var(--accent-orange); margin-top: 5px;"></div>
+      <div class="form-group" id="ai-apikey-group">
+        <label for="ai-apikey">2. Dán API Key của bạn (Tự nhận diện AIza... / gsk_... / sk-or-...)</label>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <input type="password" id="ai-apikey" class="answer-input mono" style="flex: 1;" placeholder="AIza... (Gemini) hoặc gsk_... (Groq)..." />
+          <button type="button" id="ai-discover-btn" class="btn btn-sm btn-secondary">🔍 Dò Model từ Key</button>
+        </div>
       </div>
 
       <div class="form-group">
-        <label for="ai-apikey">3. Dán API Key của bạn</label>
-        <input type="password" id="ai-apikey" class="answer-input mono" placeholder="AIza... hoặc gsk_... hoặc sk-..." />
+        <label for="ai-model">3. Model AI (Tự động cập nhật khi dò hoặc khi model cũ ngừng hỗ trợ)</label>
+        <input type="text" id="ai-model" class="answer-input mono" style="font-size: 0.86rem;" />
+        <div id="ai-discovered-wrap" style="display: none; margin-top: 8px;">
+          <select id="ai-discovered-select" class="answer-input" style="font-size: 0.84rem;"></select>
+        </div>
+        <div id="ai-provider-hint" style="font-size: 0.76rem; color: var(--accent-orange); margin-top: 5px;"></div>
       </div>
 
       <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px;">
         <button id="ai-save-btn" class="btn btn-primary">💾 Lưu cấu hình</button>
-        <button id="ai-test-btn" class="btn btn-ai">🧪 Kiểm tra kết nối API</button>
-        <button id="ai-clear-btn" class="btn btn-secondary" style="margin-left: auto;">🗑️ Xóa Key</button>
+        <button id="ai-test-btn" class="btn btn-ai">🧪 Kiểm tra kết nối AI</button>
+        <button id="ai-clear-btn" class="btn btn-secondary" style="margin-left: auto;">🗑️ Dùng AI Nội Bộ (0đ)</button>
       </div>
 
       <div id="ai-modal-status"></div>
