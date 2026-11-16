@@ -1,26 +1,30 @@
-# DLU RequestMaster — Học & Luyện Câu Yêu Cầu Lớp Học Tiếng Anh (A1–B2)
+# DLU RequestMaster v2 — 12 Chế Độ Luyện Câu Yêu Cầu & AI Tutor
 
 Website học tập và luyện tập chuyên sâu phần ngữ pháp **Câu yêu cầu (Making Requests in the English Classroom)** dành cho sinh viên ngành **Sư phạm Tiếng Anh — Trường Đại học Đà Lạt (Dalat University)**.
 
-## ✨ Tính năng nổi bật
+## ✨ Điểm mới ở Phiên bản v2
 
-- **Giao diện EdTech hiện đại (lấy cảm hứng từ [Dũng Lại Lập Trình](https://www.dunglailaptrinh.com/))**: Chế độ Dark/Light mượt mà, thanh theo dõi XP/Chuỗi đúng, mức độ thông thạo toàn học phần theo thời gian thực.
-- **Trọn vẹn 100% nội dung Cẩm nang Sư phạm**:
-  - **4 Công thức câu yêu cầu & Vị trí "Please"** (Khẳng định, Phủ định, Nghi vấn lịch sự, Nghi vấn trang trọng B1/B2) kèm trình mô phỏng biến đổi nhanh.
-  - **Giải mã 16 câu mẫu với chế độ Bật/Tắt Tô Xanh Dương mảnh ghép** (Phrasal Verbs, Cụm giới từ, Từ nối/Mệnh đề, Trạng từ cách thức, Mạo từ `a/an/the` & `your`).
-  - **Giải đáp chuyên sâu Câu 11, Câu 14 & Sửa 3 lỗi bản mẫu**.
-  - **Kho 40 từ vựng, Phrasal Verbs & Cụm giới từ chuẩn IPA Oxford UK**, tích hợp phát âm Anh-Anh (Web Speech API) và hệ thống ôn tập ngắt quãng **Noji SRS (Dễ / Trung bình / Khó)**.
-- **6 Trò chơi kết hợp 4 Kỹ năng Tiếng Anh (Listening – Speaking – Reading – Writing)**:
-  1. **Game 1 [Writing — Linguno Mode]**: Request Builder gõ câu từ gợi ý, chấm tự động theo 3 tiêu chí sư phạm (`Grammar`, `Clarity`, `Appropriateness`) và tô màu từng từ thiếu.
-  2. **Game 2 [Reading & Syntax — Wordwall Mode]**: Blue-Tile Unjumble ghép mảnh từ tô màu xanh dương.
-  3. **Game 3 [Listening — Busuu Mode]**: Nghe giáo viên đọc giọng Anh-Anh ở tốc độ `1.0x` hoặc `0.75x`, điền cụm từ thiếu hoặc chép chính tả cả câu.
-  4. **Game 4 [Speaking — AI Teacher Roleplay]**: Đọc to yêu cầu bằng Micro (`SpeechRecognition`) hoặc luyện phát âm theo câu mẫu lớp học.
-  5. **Game 5 [Reading & Grammar — Error Detective]**: Săn 1 lỗi sai ngữ pháp và giải bẫy ngữ cảnh Câu 11 / Câu 14.
-  6. **Game 6 [Vocab & Reflex — Knowt + Noji]**: Thẻ lật 3D kèm Speed Match Blitz ghép đôi Phrasal Verbs tính giờ.
-- **Phòng Luyện Đề Trọn Bộ 47 Câu A1–B2**: Đầy đủ Dạng 1A (1–9), Dạng 1B (10–21), Dạng 2 (12 câu điền từ), Dạng 3 (8 câu sửa lỗi), Dạng 4 (6 câu viết lại lịch sự).
+- **Giao diện Obsidian Bento 12 Chế độ (`#07080c` & gradient cam-vàng)**: Bố cục tối giản, sắc nét, chia 4x3 thẻ chế độ kèm phím tắt toàn cục (`Space`, `1–4`, `Enter`).
+- **Tích hợp AI Tutor qua API Key miễn phí (`Multi-Provider Free AI`)**:
+  - Hỗ trợ **Google Gemini (`gemini-2.5-flash`)**, **Groq (`llama-3.3-70b-versatile`)**, **Mistral AI (`mistral-small-latest`)**, **DeepSeek (`deepseek-chat`)** và **OpenRouter (`:free`)**.
+  - Cho phép **AI chấm bài viết câu theo 3 tiêu chí sư phạm**, **tạo mẹo nhớ Phrasal Verbs**, **sinh 5 câu trắc nghiệm mới từ Hộp Quên**, **phân tích chuyên sâu từng cụm từ**, và **đóng vai Học sinh AI phản hồi câu yêu cầu**.
+  - Khóa API lưu an toàn trên trình duyệt của người dùng (`localStorage`).
 
-## 🚀 Cách chạy trực tiếp hoặc Deploy lên GitHub Pages
+## 🎮 12 Chế độ luyện tập cùng một bộ từ & câu yêu cầu
 
-Dự án sử dụng thuần HTML5 / CSS3 / Vanilla ES6 JavaScript (không cần bước build):
-1. Mở trực tiếp `index.html` trên trình duyệt, hoặc deploy lên **GitHub Pages** (`Settings` → `Pages` → chọn nhánh `main`, thư mục `/ (root)`).
-2. Toàn bộ tiến độ học tập (XP, số câu đã giải, đánh dấu SRS) được lưu tự động trên trình duyệt bằng `localStorage`.
+1. **Flashcard (GHI NHỚ):** Lật thẻ 2 chiều `EN ⇄ VN`, Hộp Leitner (`Thuộc / Đang nhớ / Quên`), phát âm Anh-Anh.
+2. **Trắc nghiệm (LUYỆN TẬP):** `Từ → Nghĩa`, `Nghĩa → Từ`, `Ngữ cảnh điền từ`, đồng hồ 30 giây/câu, phím tắt `1–4`.
+3. **Listening (NGHE):** Nghe và gõ từ có gợi ý, nghe câu điền khuyết, chép chính tả & shadowing (`1.0x` / `0.78x`).
+4. **Gõ nghĩa & Từ (VIẾT):** `Anh → Việt` (không cần gõ dấu) & `Việt → Anh` (chấp nhận từ đồng nghĩa như `hand in / turn in`).
+5. **Viết câu yêu cầu (VIẾT CÂU):** 16 câu mẫu + 21 bài A1–B2, nút hiện dần từng từ gợi ý, chấm 3 tiêu chí + AI nhận xét.
+6. **Nối từ (TRÒ CHƠI):** Speed Match 6 cặp mỗi vòng, 5 tim, 90 giây, phát âm chuẩn UK khi nối.
+7. **Minigame (TRÒ CHƠI):** Đoán & xếp chữ cái (`Scramble`), xếp mảnh từ xanh dương thành câu (`Unjumble`), Đúng/Sai 60 giây.
+8. **Ngữ pháp & Đề 47 câu (CẤU TRÚC):** Toàn bộ 4 công thức, mảnh ghép xanh dương, 16 câu mẫu, giải đáp Câu 11/14, sửa 3 lỗi và 47 câu bài tập Dạng 1–4.
+9. **Trợ lý AI Free Key (AI TUTOR):** Mẹo nhớ, sinh đề từ Hộp Quên, hỏi đáp ngữ pháp 24/7.
+10. **Speaking & Roleplay (ĐÓNG VAI):** Thu âm qua Micro (`SpeechRecognition`) và đối thoại đóng vai giáo viên – học sinh với AI.
+11. **Bài kiểm tra (TỔNG HỢP):** Đề 10 câu kết hợp Reading, Writing, Grammar, Vocab chấm thang điểm 10, tự lưu câu sai vào Hộp Quên.
+12. **Sổ từ vựng (TRA CỨU):** Tra cứu 40 mục có IPA Oxford UK, lọc theo nhóm hoặc Hộp Leitner, phân tích chi tiết bằng AI.
+
+## 🚀 Triển khai
+
+Dự án sử dụng thuần HTML5 / CSS3 / Vanilla ES6 JavaScript (không cần build step), chạy trực tiếp qua `index.html` hoặc GitHub Pages (`main` / `(root)`).
