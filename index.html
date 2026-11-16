@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DLU RequestMaster | Học &amp; Luyện Câu Yêu Cầu Sư Phạm Tiếng Anh</title>
+  <meta
+    name="description"
+    content="Nền tảng học tập &amp; luyện 4 kỹ năng chuyên sâu ngữ pháp Câu yêu cầu (Making Requests) dành cho sinh viên Sư phạm Tiếng Anh - Đại học Đà Lạt."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Sticky Top Navigation (Dũng Lại Lập Trình Style) -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#top" class="brand">
+        <div class="brand-logo">DLU</div>
+        <div class="brand-text">
+          <strong>RequestMaster</strong>
+          <span>Sư phạm Anh • ĐH Đà Lạt</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Điều hướng chính">
+        <a href="#theory" class="nav-btn">📐 Công thức &amp; 16 Câu</a>
+        <a href="#vocabulary" class="nav-btn">📚 Từ điển IPA (40)</a>
+        <a href="#arena" class="nav-btn">🎮 6 Game 4 Kỹ năng</a>
+        <a href="#workbook" class="nav-btn">📝 Bộ đề A1–B2 (47)</a>
+        <a href="#references" class="nav-btn">✨ Nguồn UI/UX</a>
+      </nav>
+
+      <div class="nav-controls">
+        <div class="xp-pill" title="Điểm kinh nghiệm và Chuỗi đúng liên tiếp">
+          <span>⚡ <span id="nav-xp">0</span> XP</span>
+          <span>•</span>
+          <span>🔥 <span id="nav-streak">0</span></span>
+        </div>
+
+        <select id="voice-speed" class="voice-select" title="Tốc độ đọc Oxford UK">
+          <option value="1">🇬🇧 1.0x</option>
+          <option value="0.78">🐢 0.78x</option>
+        </select>
+
+        <button id="theme-toggle" class="icon-btn" title="Đổi giao diện Sáng / Tối" aria-label="Đổi giao diện">
+          🌙
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="top" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-badge">
+          🎓 ĐẠI HỌC ĐÀ LẠT • TIẾNG ANH TRONG KHOA HỌC GIÁO DỤC
+        </div>
+        <h1>
+          Làm chủ <span class="gradient-text">Câu Yêu Cầu Lớp Học</span><br />
+          theo chuẩn Sư Phạm A1–B2
+        </h1>
+        <p class="hero-lead">
+          Tổng hợp trọn vẹn <strong>4 công thức cốt lõi</strong>, <strong>16 câu mẫu tô xanh dương</strong>,
+          <strong>40 từ vựng &amp; cụm động từ IPA Oxford UK</strong>, cùng <strong>6 trò chơi kết hợp 4 kỹ năng</strong>
+          (Nghe – Nói – Đọc – Viết) và <strong>47 bài tập thực hành</strong>.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#arena" class="btn btn-primary">🎮 Vào đấu trường 6 Game (4 Kỹ năng)</a>
+          <a href="#workbook" class="btn btn-secondary">📝 Làm trọn bộ 47 câu A1–B2</a>
+          <a href="#theory" class="btn btn-ghost">📐 Xem công thức &amp; 16 câu</a>
+        </div>
+
+        <div class="criteria-mini-grid" id="hero-criteria">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Right Panel: Live Mastery & Formula Transformer -->
+      <aside class="hero-panel">
+        <div class="hero-panel-header">
+          <div class="hero-panel-title">
+            <span class="live-dot"></span>
+            Bảng Theo Dõi Tiến Độ Học Tập
+          </div>
+          <span class="badge badge-b2">Mục tiêu: Thuộc 100%</span>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="stat-num" id="stat-exercises">0 / 47</span>
+            <span class="stat-label">Bài tập A1–B2 hoàn thành</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" id="stat-vocab">0 / 40</span>
+            <span class="stat-label">Từ vựng / Cụm đã thuộc (SRS)</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" id="stat-games">0</span>
+            <span class="stat-label">Lượt thắng Mini-Game</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-num" id="stat-srs-hard">0</span>
+            <span class="stat-label">Mục đánh dấu "Khó" cần ôn</span>
+          </div>
+        </div>
+
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-top">
+            <span>Mức độ thông thạo toàn học phần</span>
+            <span id="mastery-percent">0%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="mastery-fill"></div>
+          </div>
+        </div>
+
+        <div class="quick-preview-box">
+          <span class="label">⚡ Mô phỏng biến đổi nhanh vị trí "Please"</span>
+          <div class="tabs-bar" style="margin-bottom: 10px;" id="hero-formula-pills">
+            <!-- JS injects quick pills -->
+          </div>
+          <div class="quick-preview-sentence" id="hero-preview-text">
+            Please open your textbooks to page 79.
+          </div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button id="hero-speak-btn" class="btn btn-sm btn-ghost">🔊 Nghe phát âm UK</button>
+            <button id="hero-toggle-pos" class="btn btn-sm btn-secondary">🔄 Đổi vị trí "Please"</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Section 1 & 2: Formulas, Blue Glue Rules, Determiners & 16 Sample Sentences -->
+  <section id="theory" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">Phần 1 &amp; 2 • Cẩm nang sư phạm chuẩn mực</span>
+          <h2 class="section-title">Công thức Câu Yêu Cầu, Vị trí “Please” &amp; Giải mã 16 Câu Mẫu</h2>
+          <p class="section-desc">
+            Người nói: <strong>Giáo viên dạy tiếng Anh tại trường học</strong>. Mọi mảnh ghép tô
+            <span class="glue-word">màu xanh dương</span> đều là cụm cố định giúp câu tự nhiên và chuẩn ngữ pháp.
+          </p>
+        </div>
+        <button id="xray-toggle-btn" class="btn btn-ghost">
+          💙 Bật/Tắt Tô Xanh Dương Mảnh Ghép
+        </button>
+      </div>
+
+      <!-- Sub-navigation inside Theory -->
+      <div class="tabs-bar" id="theory-tabs">
+        <button class="tab-btn active" data-theory-tab="formulas">1. Công thức &amp; Vị trí "Please"</button>
+        <button class="tab-btn" data-theory-tab="blue-rules">2.1 &amp; 2.2 Quy tắc Mảnh ghép Xanh &amp; Mạo từ</button>
+        <button class="tab-btn" data-theory-tab="samples16">16 Câu Mẫu (Tô xanh + Audio)</button>
+        <button class="tab-btn" data-theory-tab="qa-fixes">2.3 Giải đáp Câu 11, 14 &amp; Sửa 3 lỗi</button>
+      </div>
+
+      <div id="theory-content">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Vocabulary & IPA Oxford UK + Noji Spaced Repetition -->
+  <section id="vocabulary" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">Phần 4 • Từ vựng &amp; Cụm từ Lớp học IPA Oxford UK</span>
+          <h2 class="section-title">Kho 40 Từ vựng, Phrasal Verbs &amp; Giới từ Cố định</h2>
+          <p class="section-desc">
+            Bấm nút loa để nghe phát âm chuẩn Anh-Anh (Oxford UK) và đánh dấu mức độ nhớ theo phương pháp
+            <strong>Spaced Repetition (Noji)</strong>: <em>Dễ / Trung bình / Khó</em>.
+          </p>
+        </div>
+      </div>
+
+      <div class="vocab-toolbar">
+        <div class="tabs-bar" style="margin-bottom: 0;" id="vocab-cat-tabs">
+          <button class="tab-btn active" data-vocab-cat="all">Tất cả (40)</button>
+          <button class="tab-btn" data-vocab-cat="coreWords">Từ vựng cốt lõi (12)</button>
+          <button class="tab-btn" data-vocab-cat="phrasalVerbs">Phrasal Verbs (16)</button>
+          <button class="tab-btn" data-vocab-cat="prepositions">Cụm giới từ (12)</button>
+          <button class="tab-btn" data-vocab-cat="hardOnly">🔁 Cần ôn lại (<span id="hard-count-badge">0</span>)</button>
+        </div>
+
+        <input
+          type="search"
+          id="vocab-search"
+          class="search-input"
+          placeholder="Tìm từ, IPA hoặc nghĩa tiếng Việt..."
+        />
+      </div>
+
+      <div class="vocab-grid" id="vocab-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 6-Game Interactive Arena (4 Skills Integrated) -->
+  <section id="arena" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">Đấu trường 4 kỹ năng • Listening • Speaking • Reading • Writing</span>
+          <h2 class="section-title">6 Trò Chơi Đa Dạng Luyện Toàn Bộ Nội Dung Tài Liệu</h2>
+          <p class="section-desc">
+            Kết hợp tinh hoa thiết kế của <strong>Linguno, Wordwall, Busuu, Knowt, Noji</strong> &amp; <strong>Test-English</strong>
+            để ghi nhớ sâu công thức, cụm động từ, mạo từ, giới từ và phản xạ phát âm sư phạm.
+          </p>
+        </div>
+      </div>
+
+      <div class="arena-shell">
+        <div class="game-nav-grid" id="game-selector">
+          <button class="game-card-tab active" data-game="g1">
+            <span class="game-skill-tag">✍️ Writing • Linguno Mode</span>
+            <strong>Game 1: Request Builder</strong>
+            <span>Gõ câu từ gợi ý (21 đề 1A/1B + 16 câu mẫu), chấm 3 tiêu chí</span>
+          </button>
+
+          <button class="game-card-tab" data-game="g2">
+            <span class="game-skill-tag">🧩 Reading &amp; Syntax • Wordwall Mode</span>
+            <strong>Game 2: Blue-Tile Unjumble</strong>
+            <span>Ghép mảnh từ lộn xộn tô xanh dương theo đúng trật tự</span>
+          </button>
+
+          <button class="game-card-tab" data-game="g3">
+            <span class="game-skill-tag">🎧 Listening • Busuu Dictation</span>
+            <strong>Game 3: Classroom Audio Catch</strong>
+            <span>Nghe giáo viên nói giọng Oxford UK và điền / chép lại câu</span>
+          </button>
+
+          <button class="game-card-tab" data-game="g4">
+            <span class="game-skill-tag">🎙️ Speaking • AI Teacher Roleplay</span>
+            <strong>Game 4: Speak Like a Teacher</strong>
+            <span>Đọc to yêu cầu theo tình huống sư phạm bằng Micro &amp; chấm từ khóa</span>
+          </button>
+
+          <button class="game-card-tab" data-game="g5">
+            <span class="game-skill-tag">🕵️ Reading &amp; Grammar • Detective</span>
+            <strong>Game 5: Thám Tử Sửa Lỗi &amp; Ngữ Cảnh</strong>
+            <span>Săn lỗi sai Dạng 3, chọn giới từ Dạng 2 &amp; bẫy Câu 11/14</span>
+          </button>
+
+          <button class="game-card-tab" data-game="g6">
+            <span class="game-skill-tag">⚡ Vocab &amp; Reflex • Knowt + Noji</span>
+            <strong>Game 6: 3D Flashcards &amp; Speed Match</strong>
+            <span>Thẻ lật 3D IPA Oxford + Nối nhanh Phrasal Verbs tính giờ</span>
+          </button>
+        </div>
+
+        <div class="game-stage" id="game-stage">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Full 47-Question Workbook & CEFR Overview -->
+  <section id="workbook" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">Phần 3 • Phân tầng CEFR A1–B2 &amp; Bộ Đề Thực Hành</span>
+          <h2 class="section-title">Phòng Luyện Đề Toàn Diện (Trọn bộ 47 Câu + Đáp án)</h2>
+          <p class="section-desc">
+            Luyện tập tuần tự toàn bộ Dạng 1A (1–9), Dạng 1B (10–21), Dạng 2 (12 câu điền từ),
+            Dạng 3 (8 câu sửa lỗi) và Dạng 4 (6 câu viết lại lịch sự B1–B2).
+          </p>
+        </div>
+        <button id="wb-reset-btn" class="btn btn-sm btn-secondary">🔄 Làm mới trạng thái bộ đề</button>
+      </div>
+
+      <div class="tabs-bar" id="wb-tabs">
+        <button class="tab-btn active" data-wb-tab="cefr">Khung phân tầng A1–B2</button>
+        <button class="tab-btn" data-wb-tab="type1">Dạng 1A &amp; 1B: Dựng câu (21 câu)</button>
+        <button class="tab-btn" data-wb-tab="type2">Dạng 2: Điền mạo từ &amp; giới từ (12 câu)</button>
+        <button class="tab-btn" data-wb-tab="type3">Dạng 3: Tìm &amp; sửa lỗi (8 câu)</button>
+        <button class="tab-btn" data-wb-tab="type4">Dạng 4: Viết lại lịch sự B1–B2 (6 câu)</button>
+      </div>
+
+      <div id="wb-content">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: UI/UX Reference Sources -->
+  <section id="references" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">Phần 5 • Nguồn cảm hứng UI/UX &amp; Hệ thống hóa</span>
+          <h2 class="section-title">Các Nền Tảng Thiết Kế Được Tích Hợp Vào Website</h2>
+          <p class="section-desc">
+            Kết hợp bố cục EdTech sắc nét của Dũng Lại Lập Trình cùng 7 nền tảng học ngoại ngữ chuẩn quốc tế trong tài liệu.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-4" id="references-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <strong>DLU RequestMaster</strong> • Dành cho sinh viên ngành <strong>Sư phạm Tiếng Anh — Đại học Đà Lạt</strong>.
+      </p>
+      <p style="margin-top: 6px; font-size: 0.8rem;">
+        Toàn bộ dữ liệu công thức, 16 câu mẫu, 47 bài tập A1–B2 và 40 mục từ vựng IPA Oxford UK được trích xuất đầy đủ từ Cẩm nang Câu Yêu Cầu.
+      </p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
