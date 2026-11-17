@@ -1447,7 +1447,10 @@
         <button class="btn btn-primary" id="m5-check">✅ Kiểm tra 3 tiêu chí</button>
         <button class="btn btn-secondary" id="m5-hint">💡 Hiện thêm 1 từ (${mState.m5HintLevel}/${words.length})</button>
         <button class="btn btn-ai" id="m5-ai-grade">🤖 Nhờ AI chấm &amp; nhận xét</button>
-        <button class="btn btn-secondary" id="m5-next" style="margin-left:auto;">Câu tiếp ➡️</button>
+        <div style="display:flex; gap:8px; margin-left:auto;">
+          <button class="btn btn-secondary" id="m5-prev">⬅️ Câu trước</button>
+          <button class="btn btn-secondary" id="m5-next">Câu tiếp ➡️</button>
+        </div>
       </div>
       <div id="m5-feedback"></div>
       <div id="m5-ai-box"></div>
@@ -1484,8 +1487,13 @@
       if (mState.m5HintLevel < words.length) mState.m5HintLevel += 1;
       renderMode5SentenceWrite(stage);
     };
+    document.getElementById("m5-prev").onclick = () => {
+      mState.m5Idx = (mState.m5Idx - 1 + pool.length) % pool.length;
+      mState.m5HintLevel = 0;
+      renderMode5SentenceWrite(stage);
+    };
     document.getElementById("m5-next").onclick = () => {
-      mState.m5Idx += 1;
+      mState.m5Idx = (mState.m5Idx + 1) % pool.length;
       mState.m5HintLevel = 0;
       renderMode5SentenceWrite(stage);
     };
